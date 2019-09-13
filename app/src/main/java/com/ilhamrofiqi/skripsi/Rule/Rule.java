@@ -1,0 +1,193 @@
+package com.ilhamrofiqi.skripsi.Rule;
+
+import com.ilhamrofiqi.skripsi.Variabel.JumlahRating;
+import com.ilhamrofiqi.skripsi.Variabel.Kecanduan;
+import com.ilhamrofiqi.skripsi.Variabel.LamaBertahan;
+import com.ilhamrofiqi.skripsi.Variabel.SkorBertahan;
+import com.ilhamrofiqi.skripsi.Variabel.SkorKorban;
+
+public class Rule {
+    private static double [] u_Kecanduan = new double[81];
+    private static double [] z_Kecanduan = new double[81];
+    private static double bobot;
+
+//    rule
+    public static void hitung_u() {
+        u_Kecanduan[0] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.kecil()), LamaBertahan.sebentar()), JumlahRating.kecil());
+        u_Kecanduan[1] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.kecil()), LamaBertahan.sebentar()), JumlahRating.sedang());
+        u_Kecanduan[2] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.kecil()), LamaBertahan.sebentar()), JumlahRating.besar());
+        u_Kecanduan[3] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.kecil()), LamaBertahan.sedang()), JumlahRating.kecil());
+        u_Kecanduan[4] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.kecil()), LamaBertahan.sedang()), JumlahRating.sedang());
+        u_Kecanduan[5] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.kecil()), LamaBertahan.sedang()), JumlahRating.besar());
+        u_Kecanduan[6] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.kecil()), LamaBertahan.lama()), JumlahRating.kecil());
+        u_Kecanduan[7] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.kecil()), LamaBertahan.lama()), JumlahRating.sedang());
+        u_Kecanduan[8] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.kecil()), LamaBertahan.lama()), JumlahRating.besar());
+        u_Kecanduan[9] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.sedang()), LamaBertahan.sebentar()), JumlahRating.kecil());
+        u_Kecanduan[10] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.sedang()), LamaBertahan.sebentar()), JumlahRating.sedang());
+        u_Kecanduan[11] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.sedang()), LamaBertahan.sebentar()), JumlahRating.besar());
+        u_Kecanduan[12] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.sedang()), LamaBertahan.sedang()), JumlahRating.kecil());
+        u_Kecanduan[13] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.sedang()), LamaBertahan.sedang()), JumlahRating.sedang());
+        u_Kecanduan[14] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.sedang()), LamaBertahan.sedang()), JumlahRating.besar());
+        u_Kecanduan[15] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.sedang()), LamaBertahan.lama()), JumlahRating.kecil());
+        u_Kecanduan[16] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.sedang()), LamaBertahan.lama()), JumlahRating.sedang());
+        u_Kecanduan[17] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.sedang()), LamaBertahan.lama()), JumlahRating.besar());
+        u_Kecanduan[18] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.besar()), LamaBertahan.sebentar()), JumlahRating.kecil());
+        u_Kecanduan[19] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.besar()), LamaBertahan.sebentar()), JumlahRating.sedang());
+        u_Kecanduan[20] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.besar()), LamaBertahan.sebentar()), JumlahRating.besar());
+        u_Kecanduan[21] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.besar()), LamaBertahan.sedang()), JumlahRating.kecil());
+        u_Kecanduan[22] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.besar()), LamaBertahan.sedang()), JumlahRating.sedang());
+        u_Kecanduan[23] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.besar()), LamaBertahan.sedang()), JumlahRating.besar());
+        u_Kecanduan[24] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.besar()), LamaBertahan.lama()), JumlahRating.kecil());
+        u_Kecanduan[25] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.besar()), LamaBertahan.lama()), JumlahRating.sedang());
+        u_Kecanduan[26] = Math.min(Math.min(Math.min(SkorKorban.kecil(), SkorBertahan.besar()), LamaBertahan.lama()), JumlahRating.besar());
+        u_Kecanduan[27] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.kecil()), LamaBertahan.sebentar()), JumlahRating.kecil());
+        u_Kecanduan[28] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.kecil()), LamaBertahan.sebentar()), JumlahRating.sedang());
+        u_Kecanduan[29] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.kecil()), LamaBertahan.sebentar()), JumlahRating.besar());
+        u_Kecanduan[30] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.kecil()), LamaBertahan.sedang()), JumlahRating.kecil());
+        u_Kecanduan[31] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.kecil()), LamaBertahan.sedang()), JumlahRating.sedang());
+        u_Kecanduan[32] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.kecil()), LamaBertahan.sedang()), JumlahRating.besar());
+        u_Kecanduan[33] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.kecil()), LamaBertahan.lama()), JumlahRating.kecil());
+        u_Kecanduan[34] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.kecil()), LamaBertahan.lama()), JumlahRating.sedang());
+        u_Kecanduan[35] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.kecil()), LamaBertahan.lama()), JumlahRating.besar());
+        u_Kecanduan[36] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.sedang()), LamaBertahan.sebentar()), JumlahRating.kecil());
+        u_Kecanduan[37] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.sedang()), LamaBertahan.sebentar()), JumlahRating.sedang());
+        u_Kecanduan[38] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.sedang()), LamaBertahan.sebentar()), JumlahRating.besar());
+        u_Kecanduan[39] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.sedang()), LamaBertahan.sedang()), JumlahRating.kecil());
+        u_Kecanduan[40] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.sedang()), LamaBertahan.sedang()), JumlahRating.sedang());
+        u_Kecanduan[41] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.sedang()), LamaBertahan.sedang()), JumlahRating.besar());
+        u_Kecanduan[42] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.sedang()), LamaBertahan.lama()), JumlahRating.kecil());
+        u_Kecanduan[43] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.sedang()), LamaBertahan.lama()), JumlahRating.sedang());
+        u_Kecanduan[44] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.sedang()), LamaBertahan.lama()), JumlahRating.besar());
+        u_Kecanduan[45] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.besar()), LamaBertahan.sebentar()), JumlahRating.kecil());
+        u_Kecanduan[46] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.besar()), LamaBertahan.sebentar()), JumlahRating.sedang());
+        u_Kecanduan[47] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.besar()), LamaBertahan.sebentar()), JumlahRating.besar());
+        u_Kecanduan[48] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.besar()), LamaBertahan.sedang()), JumlahRating.kecil());
+        u_Kecanduan[49] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.besar()), LamaBertahan.sedang()), JumlahRating.sedang());
+        u_Kecanduan[50] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.besar()), LamaBertahan.sedang()), JumlahRating.besar());
+        u_Kecanduan[51] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.besar()), LamaBertahan.lama()), JumlahRating.kecil());
+        u_Kecanduan[52] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.besar()), LamaBertahan.lama()), JumlahRating.sedang());
+        u_Kecanduan[53] = Math.min(Math.min(Math.min(SkorKorban.sedang(), SkorBertahan.besar()), LamaBertahan.lama()), JumlahRating.besar());
+        u_Kecanduan[54] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.kecil()), LamaBertahan.sebentar()), JumlahRating.kecil());
+        u_Kecanduan[55] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.kecil()), LamaBertahan.sebentar()), JumlahRating.sedang());
+        u_Kecanduan[56] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.kecil()), LamaBertahan.sebentar()), JumlahRating.besar());
+        u_Kecanduan[57] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.kecil()), LamaBertahan.sedang()), JumlahRating.kecil());
+        u_Kecanduan[58] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.kecil()), LamaBertahan.sedang()), JumlahRating.sedang());
+        u_Kecanduan[59] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.kecil()), LamaBertahan.sedang()), JumlahRating.besar());
+        u_Kecanduan[60] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.kecil()), LamaBertahan.lama()), JumlahRating.kecil());
+        u_Kecanduan[61] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.kecil()), LamaBertahan.lama()), JumlahRating.sedang());
+        u_Kecanduan[62] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.kecil()), LamaBertahan.lama()), JumlahRating.besar());
+        u_Kecanduan[63] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.sedang()), LamaBertahan.sebentar()), JumlahRating.kecil());
+        u_Kecanduan[64] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.sedang()), LamaBertahan.sebentar()), JumlahRating.sedang());
+        u_Kecanduan[65] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.sedang()), LamaBertahan.sebentar()), JumlahRating.besar());
+        u_Kecanduan[66] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.sedang()), LamaBertahan.sedang()), JumlahRating.kecil());
+        u_Kecanduan[67] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.sedang()), LamaBertahan.sedang()), JumlahRating.sedang());
+        u_Kecanduan[68] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.sedang()), LamaBertahan.sedang()), JumlahRating.besar());
+        u_Kecanduan[69] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.sedang()), LamaBertahan.lama()), JumlahRating.kecil());
+        u_Kecanduan[70] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.sedang()), LamaBertahan.lama()), JumlahRating.sedang());
+        u_Kecanduan[71] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.sedang()), LamaBertahan.lama()), JumlahRating.besar());
+        u_Kecanduan[72] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.besar()), LamaBertahan.sebentar()), JumlahRating.kecil());
+        u_Kecanduan[73] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.besar()), LamaBertahan.sebentar()), JumlahRating.sedang());
+        u_Kecanduan[74] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.besar()), LamaBertahan.sebentar()), JumlahRating.besar());
+        u_Kecanduan[75] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.besar()), LamaBertahan.sedang()), JumlahRating.kecil());
+        u_Kecanduan[76] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.besar()), LamaBertahan.sedang()), JumlahRating.sedang());
+        u_Kecanduan[77] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.besar()), LamaBertahan.sedang()), JumlahRating.besar());
+        u_Kecanduan[78] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.besar()), LamaBertahan.lama()), JumlahRating.kecil());
+        u_Kecanduan[79] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.besar()), LamaBertahan.lama()), JumlahRating.sedang());
+        u_Kecanduan[80] = Math.min(Math.min(Math.min(SkorKorban.besar(), SkorBertahan.besar()), LamaBertahan.lama()), JumlahRating.besar());
+    }
+
+    public static void hitung_z() {
+        z_Kecanduan[0] = Kecanduan.rendah(u_Kecanduan[0]);
+        z_Kecanduan[1] = Kecanduan.rendah(u_Kecanduan[1]);
+        z_Kecanduan[2] = Kecanduan.rendah(u_Kecanduan[2]);
+        z_Kecanduan[3] = Kecanduan.rendah(u_Kecanduan[3]);
+        z_Kecanduan[4] = Kecanduan.rendah(u_Kecanduan[4]);
+        z_Kecanduan[5] = Kecanduan.sedang(u_Kecanduan[5]);
+        z_Kecanduan[6] = Kecanduan.rendah(u_Kecanduan[6]);
+        z_Kecanduan[7] = Kecanduan.rendah(u_Kecanduan[7]);
+        z_Kecanduan[8] = Kecanduan.sedang(u_Kecanduan[8]);
+        z_Kecanduan[9] = Kecanduan.rendah(u_Kecanduan[9]);
+        z_Kecanduan[10] = Kecanduan.rendah(u_Kecanduan[10]);
+        z_Kecanduan[11] = Kecanduan.sedang(u_Kecanduan[11]);
+        z_Kecanduan[12] = Kecanduan.rendah(u_Kecanduan[12]);
+        z_Kecanduan[13] = Kecanduan.sedang(u_Kecanduan[13]);
+        z_Kecanduan[14] = Kecanduan.sedang(u_Kecanduan[14]);
+        z_Kecanduan[15] = Kecanduan.sedang(u_Kecanduan[15]);
+        z_Kecanduan[16] = Kecanduan.sedang(u_Kecanduan[16]);
+        z_Kecanduan[17] = Kecanduan.tinggi(u_Kecanduan[17]);
+        z_Kecanduan[18] = Kecanduan.rendah(u_Kecanduan[18]);
+        z_Kecanduan[19] = Kecanduan.sedang(u_Kecanduan[19]);
+        z_Kecanduan[20] = Kecanduan.tinggi(u_Kecanduan[20]);
+        z_Kecanduan[21] = Kecanduan.sedang(u_Kecanduan[21]);
+        z_Kecanduan[22] = Kecanduan.sedang(u_Kecanduan[22]);
+        z_Kecanduan[23] = Kecanduan.tinggi(u_Kecanduan[23]);
+        z_Kecanduan[24] = Kecanduan.sedang(u_Kecanduan[24]);
+        z_Kecanduan[25] = Kecanduan.tinggi(u_Kecanduan[25]);
+        z_Kecanduan[26] = Kecanduan.tinggi(u_Kecanduan[26]);
+        z_Kecanduan[27] = Kecanduan.rendah(u_Kecanduan[27]);
+        z_Kecanduan[28] = Kecanduan.rendah(u_Kecanduan[28]);
+        z_Kecanduan[29] = Kecanduan.sedang(u_Kecanduan[29]);
+        z_Kecanduan[30] = Kecanduan.rendah(u_Kecanduan[30]);
+        z_Kecanduan[31] = Kecanduan.sedang(u_Kecanduan[31]);
+        z_Kecanduan[32] = Kecanduan.sedang(u_Kecanduan[32]);
+        z_Kecanduan[33] = Kecanduan.sedang(u_Kecanduan[33]);
+        z_Kecanduan[34] = Kecanduan.sedang(u_Kecanduan[34]);
+        z_Kecanduan[35] = Kecanduan.tinggi(u_Kecanduan[35]);
+        z_Kecanduan[36] = Kecanduan.rendah(u_Kecanduan[36]);
+        z_Kecanduan[37] = Kecanduan.sedang(u_Kecanduan[37]);
+        z_Kecanduan[38] = Kecanduan.sedang(u_Kecanduan[38]);
+        z_Kecanduan[39] = Kecanduan.sedang(u_Kecanduan[39]);
+        z_Kecanduan[40] = Kecanduan.sedang(u_Kecanduan[40]);
+        z_Kecanduan[41] = Kecanduan.sedang(u_Kecanduan[41]);
+        z_Kecanduan[42] = Kecanduan.sedang(u_Kecanduan[42]);
+        z_Kecanduan[43] = Kecanduan.sedang(u_Kecanduan[43]);
+        z_Kecanduan[44] = Kecanduan.tinggi(u_Kecanduan[44]);
+        z_Kecanduan[45] = Kecanduan.rendah(u_Kecanduan[45]);
+        z_Kecanduan[46] = Kecanduan.sedang(u_Kecanduan[46]);
+        z_Kecanduan[47] = Kecanduan.tinggi(u_Kecanduan[47]);
+        z_Kecanduan[48] = Kecanduan.sedang(u_Kecanduan[48]);
+        z_Kecanduan[49] = Kecanduan.sedang(u_Kecanduan[49]);
+        z_Kecanduan[50] = Kecanduan.tinggi(u_Kecanduan[50]);
+        z_Kecanduan[51] = Kecanduan.tinggi(u_Kecanduan[51]);
+        z_Kecanduan[52] = Kecanduan.tinggi(u_Kecanduan[52]);
+        z_Kecanduan[53] = Kecanduan.tinggi(u_Kecanduan[53]);
+        z_Kecanduan[54] = Kecanduan.rendah(u_Kecanduan[54]);
+        z_Kecanduan[55] = Kecanduan.rendah(u_Kecanduan[55]);
+        z_Kecanduan[56] = Kecanduan.tinggi(u_Kecanduan[56]);
+        z_Kecanduan[57] = Kecanduan.rendah(u_Kecanduan[57]);
+        z_Kecanduan[58] = Kecanduan.sedang(u_Kecanduan[58]);
+        z_Kecanduan[59] = Kecanduan.tinggi(u_Kecanduan[59]);
+        z_Kecanduan[60] = Kecanduan.sedang(u_Kecanduan[60]);
+        z_Kecanduan[61] = Kecanduan.tinggi(u_Kecanduan[61]);
+        z_Kecanduan[62] = Kecanduan.tinggi(u_Kecanduan[62]);
+        z_Kecanduan[63] = Kecanduan.rendah(u_Kecanduan[63]);
+        z_Kecanduan[64] = Kecanduan.sedang(u_Kecanduan[64]);
+        z_Kecanduan[65] = Kecanduan.tinggi(u_Kecanduan[65]);
+        z_Kecanduan[66] = Kecanduan.sedang(u_Kecanduan[66]);
+        z_Kecanduan[67] = Kecanduan.sedang(u_Kecanduan[67]);
+        z_Kecanduan[68] = Kecanduan.tinggi(u_Kecanduan[68]);
+        z_Kecanduan[69] = Kecanduan.tinggi(u_Kecanduan[69]);
+        z_Kecanduan[70] = Kecanduan.tinggi(u_Kecanduan[70]);
+        z_Kecanduan[71] = Kecanduan.tinggi(u_Kecanduan[71]);
+        z_Kecanduan[72] = Kecanduan.sedang(u_Kecanduan[72]);
+        z_Kecanduan[73] = Kecanduan.tinggi(u_Kecanduan[73]);
+        z_Kecanduan[74] = Kecanduan.tinggi(u_Kecanduan[74]);
+        z_Kecanduan[75] = Kecanduan.tinggi(u_Kecanduan[75]);
+        z_Kecanduan[76] = Kecanduan.tinggi(u_Kecanduan[76]);
+        z_Kecanduan[77] = Kecanduan.tinggi(u_Kecanduan[77]);
+        z_Kecanduan[78] = Kecanduan.tinggi(u_Kecanduan[78]);
+        z_Kecanduan[79] = Kecanduan.tinggi(u_Kecanduan[79]);
+        z_Kecanduan[80] = Kecanduan.tinggi(u_Kecanduan[80]);
+
+    }
+
+//    Cari nilai defuzzyfikasi atau nilai z
+    public static double bobot() {
+        double atas = 0, bawah = 0;
+        for (int i=0; i<81; i++) {
+            atas+= (u_Kecanduan[i] * z_Kecanduan[i]);
+            bawah+= u_Kecanduan[i];
+        }
+        return (atas / bawah);
+    }
+}

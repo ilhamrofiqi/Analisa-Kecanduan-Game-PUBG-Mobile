@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Skripsi</string>
+    <string name="masukkan_data">Masukkan Data</string>
+    <string name="skor_bertahan">Skor Bertahan</string>
+    <string name="skor_korban">Skor Korban</string>
+    <string name="lama_bertahan">Lama Bertahan</string>
+    <string name="jumlah_rating">Jumlah Rating</string>
+    <string name="analis">Cek Tingkat Kecanduan</string>
+    <string name="hasil">Tingkat Kecanduan Anda</string>
+    <string name="kecanduan">Kecanduan</string>
+    <string name="nilai">0.00</string>
+</resources>
